@@ -8,8 +8,8 @@ Run generate_pose.py on train and test frames seperately, this will extract pose
 File: generate_pose.py
 Inputs: path--> path of frames from which pose to be extracted
         out_path--> path to save json file
-
 Outputs: json file per video containing pose keypoint per frame per individual with name:  "alphapose-results.json"
+
 If bounding box normalization needed then some changes in dataloader.py(from Alphapose) are needed:
 --> Inside dataloader.py instead of importing from "fn" import from fn_norm, this is also mentioned inside dataloader file.
 
@@ -19,8 +19,7 @@ Now go inside folder PoseFlow and run generate_track.py, this will assign ID to 
 File: generate_track.py
 Inputs: path--> give path of frames on which tracker will be applied (same as step 1)
         in_json--> path to json file from the output of step 1
-        out_json--> path to save tracker json file
-        
+        out_json--> path to save tracker json file  
 Outputs: json file per video containing tracks of each individual with an ID assigned, name of each file: alphapose-results-forvis-tracked.json
 
  -----------------------------------------------------------------------------------------------
@@ -31,7 +30,6 @@ Friendly Advice: Step 1 and 2 takes lot of time to generate results(2-3 days), s
 Run generate_npy.py, which converts json to npy file. Each npy file containes continuous trackes and as soon as trackes breaks a new file is created for same person.
 File: generate_npy.py
 Inputs: path--> path to json file obtained from step2
- 
 Outputs: npy file per continuous track per person. Format: generate_npy/video_name/personID_tracknum
  
  
@@ -40,7 +38,6 @@ Run final_npy.py, this file is for getting desired format for each list element 
 File: final_npy.py
 Inputs: path--> path to generate_npy folder(from step3)
          save_path--> path to save final_npy files
-         
 Outputs: npy files in the following format: final_npy/video_name/personID_tracknum
 Length: 56 
 Index   Value
@@ -58,7 +55,6 @@ Index   Value
 Friendly Advice: Above 2 steps also require one time run so output can be saved and used as per requirement
 
 Sliding Window Procedure:
-
 ### Step 5: 
 Run sliding.py on train and test final_npy files(obtained from step 4) to obtain data in sliding window format.
 File: sliding_train.py
