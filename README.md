@@ -86,7 +86,7 @@ Please read [PoseFlow/README.md](PoseFlow/) for details.
 Please read [doc/CrowdPose.md](doc/CrowdPose.md) for details.
 
 
-### Steps for PreProcessing
+## Steps for PreProcessing
 Please read [doc/steps.md](doc/steps.md) for details
 
 
