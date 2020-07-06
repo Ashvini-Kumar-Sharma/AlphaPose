@@ -1,6 +1,6 @@
 Following steps are needed to perform preprocessing on datasets:
 ##### Note: 
-1) All datasets are in video format make sure to convert them into frames using ffmpeg
+1) All datasets are in video format make sure to convert them into frames using ffmpeg (use frames.py available in pytorch branch for conversion of all videos to frames)
 2) All steps require Alphapose and Poseflow pytorch branch(available in current repository), so make sure to clone it.
 
 ### Step 1:
